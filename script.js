@@ -130,43 +130,51 @@ radioPlace[1].addEventListener('change', validateRadioPlace);
 radioPlace[2].addEventListener('change', validateRadioPlace);
     
 
-sendBtn.addEventListener('click', function(){
+form.addEventListener('submit', function(event){
     var isErrorFound = false;
     if(!validateDeveloper() && !isErrorFound){
         form.elements.developerName.scrollIntoView();
         form.elements.developerName.focus();
         isErrorFound = true;
+        event.preventDefault();
+
     };
     if(!validateNameSite() && !isErrorFound){
         form.elements.nameSite.scrollIntoView();
         form.elements.nameSite.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
     if(!validateUrlSite() && !isErrorFound){
         form.elements.urlSite.scrollIntoView();
         form.elements.urlSite.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
     if(!validateDayStartSite() && !isErrorFound){
         form.elements.dateStartSite.scrollIntoView();
         form.elements.dateStartSite.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
     if(!validateVisitorDay() && !isErrorFound){
         form.elements.visitorsDay.scrollIntoView();
         form.elements.visitorsDay.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
     if(!validateEmailCommunication() && !isErrorFound){
         form.elements.emailCommunication.scrollIntoView();
         form.elements.emailCommunication.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
     validateRadioPlace();
     if(!validateSiteDescription() && !isErrorFound){
         form.elements.siteDescription.scrollIntoView();
         form.elements.siteDescription.focus();
         isErrorFound = true;
+        event.preventDefault();
     };
 })
 
